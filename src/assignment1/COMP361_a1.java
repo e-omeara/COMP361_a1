@@ -5,7 +5,9 @@ public class COMP361_a1 {
     public static void main(String[] args) {
 
         //doFirst();
-        doSecond();
+        //doSecond();
+        //doThird();
+        doFourth();
 
     }
 
@@ -39,6 +41,33 @@ public class COMP361_a1 {
 
         Question2.method2(0.1, 20, 1.5);
 ;
+    }
+
+    public static void doThird(){
+
+
+        for(int m = 2; m <= 40; m = m+4) {
+
+            double midpoint = Question3.midPoint(m);
+            double simpson = Question3.simpsons(m);
+            System.out.println("Midpoint approximation for m = " + m + ": " + midpoint);
+            System.out.println("error is: " + Math.abs(midpoint - Question3.accurate));
+            //System.out.println(Question3.errorCalc(midpoint, 1/(double)m));
+            System.out.println("Simpson approximation for m = " + m + ": " + simpson);
+            System.out.println("error is: " + Math.abs(simpson - Question3.accurate));
+            System.out.println(Question3.errorCalc(simpson, 1/(double)m));
+            System.out.println("");
+        }
+    }
+
+    public static void doFourth(){
+
+        //Question4.derivative();
+
+        //Question4.oneOverX();
+        Question4.bigFunction();
+
+
     }
 
 }
