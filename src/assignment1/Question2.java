@@ -1,10 +1,27 @@
 package assignment1;
 
+import java.io.IOException;
+
 public class Question2 {
 
-    public static double method(double initial, int max){
+    static double[] xVal;
+    static double[] yVal;
+
+    static double[] xVal1;
+    static double[] yVal1;
+
+    public static double methodCall(double initial, int max) throws IOException {
         //first operation
-        return method(initial, max, 0);
+
+        xVal = new double[max];
+        yVal = new double[max];
+
+
+        double value = method(initial, max-1, 0);
+
+        ChartMaker.chartMake(xVal, yVal, "Series for f(x) = (2x^3+5)/3x^2", "Repetitions", "f(x)", "(2x^3+5)/3x^2", "q2/part1" );
+
+        return value;
 
 
 
@@ -13,26 +30,46 @@ public class Question2 {
     }
 
 
-    public static double method(double previous, int max, int count){
+    public static double method(double previous, int max, int count) throws IOException {
 
         double value;
 
         if(count < max){
             count++;
             value = operation(method(previous, max, count));
+            xVal[max - count + 1] = max - count + 2;
+            yVal[max - count + 1] = value;
+            //System.out.println(xVal[max - count + 1] + ": " + value);
 
 
         } else{
+            count++;
             value = operation(previous);
+            xVal[max - count + 1] = max - count + 2;
+            yVal[max - count + 1] = value;
+            //System.out.println(xVal[max - count + 1] + ": " + value);
+            //ChartMaker.chartMake(xVal, yVal, "Series for f(x) = (2x^3+5)/3x^2", "Repetitions", "f(x)", "(2x^3+5)/3x^2", "q2/part1" );
+
         }
+
+
 
         return value;
 
     }
 
-    public static double method2(double initial, int max, double c){
+    public static double methodCall2(double initial, int max, double c) throws IOException {
         //first operation
-        return method2(initial, max, c, 0);
+
+        xVal1 = new double[max];
+        yVal1 = new double[max];
+
+        double value = method2(initial, max-1, c, 0);
+
+        ChartMaker.chartMake(xVal1, yVal1, "Series for f(x) = cx(1-x), c = " + c, "Repetitions", "f(x)", "cx(1-x)", "q2/part2c" + c );
+
+
+        return value;
 
 
 
@@ -40,18 +77,28 @@ public class Question2 {
 
     }
 
-    public static double method2(double previous, int max, double c, int count){
+    public static double method2(double previous, int max, double c, int count) throws IOException {
 
         double value;
 
         if(count < max){
             count++;
             value = operation2(method2(previous, max, c, count), c);
+            xVal1[max - count + 1] = max - count + 2;
+            yVal1[max - count + 1] = value;
+            //System.out.println(xVal1[max - count + 1] + ": " + value);
 
 
         } else{
+            count++;
             value = operation2(previous, c);
+            xVal1[max - count + 1] = max - count + 2;
+            yVal1[max - count + 1] = value;
+            //System.out.println(xVal1[max - count + 1] + ": " + value);
+
         }
+
+
 
         return value;
 
