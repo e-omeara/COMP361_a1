@@ -6,9 +6,9 @@ public class COMP361_a1 {
 
     public static void main(String[] args) throws IOException {
 
-        //doFirst();
-        //doSecond();
-        //doThird();
+        doFirst();
+        doSecond();
+        doThird();
         doFourth();
 
 
@@ -58,7 +58,7 @@ public class COMP361_a1 {
 
     public static void doSecond() throws IOException {
 
-        //Question2.methodCall(1, 20);
+        Question2.methodCall(10, 20);
 
         Question2.methodCall2(0.1, 20, 3.98);
 ;
@@ -66,7 +66,7 @@ public class COMP361_a1 {
 
     public static void doThird() throws IOException {
 
-        int max = 60;
+        int max = 2500;
         double[] xVal = new double[max/4];
         double[] syVal = new double[max/4];
         double[] myVal = new double[max/4];
@@ -97,23 +97,23 @@ public class COMP361_a1 {
 
         }
 
-        //ChartMaker.chartMake(xVal, myVal, "Midpoint approximation of integral of sin(pi x)", "M", "F(x)", "integral f(x)", "q3/midpoint");
-        //ChartMaker.chartMake(xVal, syVal, "Simpson approximation of integral of sin(pi x)", "M", "F(x)", "integral f(x)", "q3/simpson");
-        //ChartMaker.chartMake(xVal, merrorVal, "Error in Midpoint approximation of integral of sin(pi x)", "M", "Error", "error", "q3/midpointerr");
-        //ChartMaker.chartMake(xVal, serrorVal, "Error in Simpson approximation of integral of sin(pi x)", "M", "Error", "error", "q3/simpsonerr");
+        ChartMaker.chartMake(xVal, myVal, "Midpoint approximation of integral of sin(pi x)", "M", "F(x)", "integral f(x)", "q3/midpoint");
+        ChartMaker.chartMake(xVal, syVal, "Simpson approximation of integral of sin(pi x)", "M", "F(x)", "integral f(x)", "q3/simpson");
+        ChartMaker.chartMake(xVal, merrorVal, "Error in Midpoint approximation of integral of sin(pi x)", "M", "Error", "error", "q3/midpointerr");
+        ChartMaker.chartMake(xVal, serrorVal, "Error in Simpson approximation of integral of sin(pi x)", "M", "Error", "error", "q3/simpsonerr");
 
         CSVoutputer.dataToCSV(xVal, myVal, "M", "F(x)", "q3/midpointData");
         CSVoutputer.dataToCSV(xVal, syVal, "M", "F(x)", "q3/simpsonData");
-        CSVoutputer.dataToCSV(xVal, merrorVal, "M", "error", "q3/midpointError");
+        CSVoutputer.dataToCSV(xVal, merrorVal, "M", "error", "q3/bigmidpointError");
         CSVoutputer.dataToCSV(xVal, serrorVal, "M", "error", "q3/simpsonError");
 
     }
 
     public static void doFourth() throws IOException {
 
-        //Question4.derivative();
+        Question4.derivative();
 
-        //Question4.oneOverX();
+        Question4.oneOverX();
         Question4.bigFunction();
 
 

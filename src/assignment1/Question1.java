@@ -4,7 +4,7 @@ public class Question1 {
 
     public static float singlePrecisions(int n){
 
-        float miao = 1;
+        float miao = 1;     //total sum of harmonic
         int max = (int)Math.pow(10, n);
 
         for(int k = 1; k <= max; k++){
@@ -21,7 +21,7 @@ public class Question1 {
 
     public static double doublePrecisions(int n){
 
-        double miao = 1;
+        double miao = 1;        //total sum of harmonic
         int max = (int)Math.pow(10, n);
 
         for(int k = 1; k <= max; k++){
@@ -37,7 +37,7 @@ public class Question1 {
 
     public static float singleCubic(int n){
 
-        float miao = 1;
+        float miao = 1;     //total sum of cubic
         int max = (int)Math.pow(10, n);
 
         for(int k = 1; k <= max; k++){
@@ -54,7 +54,7 @@ public class Question1 {
 
     public static double doubleCubic(int n){
 
-        double miao = 1;
+        double miao = 1;        //total sum of harmonic
         int max = (int)Math.pow(10, n);
 
         for(int k = 1; k <= max; k++){
